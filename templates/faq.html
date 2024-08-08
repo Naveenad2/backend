@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Socialbee Ventures</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container-fluid px-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <img src="{% static 'assets/images/logo.png' %}" alt="Socialbee Ventures Logo" class="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Events
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="eventsDropdown">
+                                    <a class="dropdown-item" href="{% url 'events' %}?section=ongoing">Ongoing Events</a>
+                                    <a class="dropdown-item" href="{% url 'events' %}?section=upcoming">Upcoming Events</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Resources
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                                    <a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a>
+                                    <a class="dropdown-item" href="{% url 'media' %}">Media</a>
+                                    <a class="dropdown-item" href="{% url 'newsletter' %}">Newsletters</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="faq-section py-5">
+        <div class="container">
+            <h1 class="text-uppercase text-warning">Frequently Asked Questions</h1>
+            <p class="lead">Find answers to common questions below. If you need further assistance, please contact us.</p>
+            <div class="accordion" id="faqAccordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link text-warning" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Question 1: What is Socialbee Ventures?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Socialbee Ventures is a social enterprise focused on launching and nurturing social startups that aim to address urgent societal issues.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link text-warning collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Question 2: How can I join Socialbee Ventures?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            You can join Socialbee Ventures by applying for our current job openings or by collaborating with us on social projects. Check our Careers page for more details.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link text-warning collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Question 3: What services do you offer?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            We offer a range of services including social entrepreneurship support, networking events, digital marketing, and business consulting.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="Socialbee Ventures Logo" class="img-fluid mb-3">
+                    <p>Stay in the loop—subscribe and connect with us for the latest news and inspiring updates!</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-warning mr-2"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/socialbeeventures?igsh=N3pwYXYwOWdscmcx" class="text-warning mr-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/socialbeeventures?mibextid=ZbWKwL" class="text-warning"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Short Link</h5>
+                    <p><a href="{% url 'home' %}" class="text-dark">Home</a></p>
+                    <p><a href="{% url 'about' %}" class="text-dark">About us</a></p>
+                    <p><a href="{% url 'projects' %}" class="text-dark">Projects</a></p>
+                    <p><a href="{% url 'career' %}" class="text-dark">Career</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Help Link</h5>
+                    <p><a href="{% url 'terms_of_use' %}" class="text-dark">Terms of use</a></p>
+                    <p><a href="{% url 'privacy' %}" class="text-dark">Privacy policy</a></p>
+                    <p><a href="{% url 'help' %}" class="text-dark">Help</a></p>
+                    <p><a href="{% url 'faq' %}" class="text-dark">FAQs</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Resources</h5>
+                    <p><a href="{% url 'newsletter' %}" class="text-dark">Newsletters</a></p>
+                    <p><a href="{% url 'media' %}" class="text-dark">Media</a></p>
+                    <p><a href="{% url 'gallery' %}" class="text-dark">Gallery</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-black">Contact Us</h5>
+                    <div class="d-flex mb-2">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">SOCIALBEE VENTURES LLP</p>
+                            <p>55/1, 135A. 5th Cross road, Girinagar, Kadavanthara, Kochi</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">9249099309</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">director@socialbeeventures.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

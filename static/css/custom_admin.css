@@ -1,0 +1,28 @@
+/* Button styles */
+.btn-primary,
+.btn-warning,
+.btn-danger,
+.btn-success,
+.btn-info {
+    background-color: #f8a822 !important;
+    color: black !important;
+    border: none !important;
+}
+
+.btn-primary:hover,
+.btn-warning:hover,
+.btn-danger:hover,
+.btn-success:hover,
+.btn-info:hover {
+    background-color: #ffffff !important;
+    color: black !important;
+    border: none !important;
+}
+
+
+
+.login-page, .login-box {
+    background-color: whitesmoke !important;
+}
+
+

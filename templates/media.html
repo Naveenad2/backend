@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media - Socialbee Ventures</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container-fluid px-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <img src="{% static 'assets/images/logo.png' %}" alt="Socialbee Ventures Logo" class="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Events
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="eventsDropdown">
+                                    <a class="dropdown-item" href="{% url 'events' %}?section=ongoing">Ongoing Events</a>
+                                    <a class="dropdown-item" href="{% url 'events' %}?section=upcoming">Upcoming Events</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Resources
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                                    <a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a>
+                                    <a class="dropdown-item" href="{% url 'media' %}">Media</a>
+                                    <a class="dropdown-item" href="{% url 'newsletter' %}">Newsletters</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="background: url('{% static 'assets/images/resrcs.jpg' %}') no-repeat center center; background-size: cover; height: 542px;">
+        <div class="container-fluid px-0 h-100">
+            <div class="hero-content d-flex align-items-center justify-content-center text-center h-100" style="max-width: 1440px;">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="media-section custom-bg-black text-white py-5">
+        <div class="container">
+            <h2 class="text-uppercase text-warning text-center">Media</h2>
+            {% if highlight_media %}
+            <div class="row align-items-center mb-4 border border-warning p-3">
+                <div class="col-md-6">
+                    <div class="media-item">
+                        <video class="img-fluid" controls>
+                            <source src="{{ highlight_media.video.url }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="media-description">
+                        <p>{{ highlight_media.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if media_items %}
+            <div class="row" id="media-container">
+                {% for item in media_items %}
+                <div class="col-md-6 mb-4">
+                    <div class="media-item">
+                        {% if item.media_type == 'local' and item.video_file %}
+                        <video class="img-fluid" controls>
+                            <source src="{{ item.video_file.url }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        {% elif item.media_type == 'youtube' %}
+                        <iframe class="img-fluid" src="https://www.youtube.com/embed/{{ item.video_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        {% endif %}
+                        <div class="media-description mt-2">{{ item.description }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% if media_items|length == 8 %}
+            <div class="text-center">
+                <button class="btn btn-warning text-uppercase" id="load-more" data-offset="8">Load More</button>
+            </div>
+            {% endif %}
+            {% else %}
+            <p class="text-center">No media available at the moment.</p>
+            {% endif %}
+        </div>
+    </section>
+    
+
+
+
+
+    <footer class="footer bg-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="Socialbee Ventures Logo" class="img-fluid mb-3">
+                    <p>Stay in the loop—subscribe and connect with us for the latest news and inspiring updates!</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-warning mr-2"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/socialbeeventures?igsh=N3pwYXYwOWdscmcx" class="text-warning mr-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/socialbeeventures?mibextid=ZbWKwL" class="text-warning"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Short Link</h5>
+                    <p><a href="{% url 'home' %}" class="text-dark">Home</a></p>
+                    <p><a href="{% url 'about' %}" class="text-dark">About us</a></p>
+                    <p><a href="{% url 'projects' %}" class="text-dark">Projects</a></p>
+                    <p><a href="{% url 'career' %}" class="text-dark">Career</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Help Link</h5>
+                    <p><a href="{% url 'terms_of_use' %}" class="text-dark">Terms of use</a></p>
+                    <p><a href="{% url 'privacy' %}" class="text-dark">Privacy policy</a></p>
+                    <p><a href="{% url 'help' %}" class="text-dark">Help</a></p>
+                    <p><a href="{% url 'faq' %}" class="text-dark">FAQs</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Resources</h5>
+                    <p><a href="{% url 'newsletter' %}" class="text-dark">Newsletters</a></p>
+                    <p><a href="{% url 'media' %}" class="text-dark">Media</a></p>
+                    <p><a href="{% url 'gallery' %}" class="text-dark">Gallery</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-black">Contact Us</h5>
+                    <div class="d-flex mb-2">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">SOCIALBEE VENTURES LLP</p>
+                            <p>55/1, 135A. 5th Cross road, Girinagar, Kadavanthara, Kochi</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">9249099309</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">director@socialbeeventures.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/media.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

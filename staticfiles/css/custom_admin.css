@@ -1,0 +1,64 @@
+/* Button styles */
+.btn-primary,
+.btn-warning,
+.btn-danger,
+.btn-success,
+.btn-info {
+    background-color: #f8a822 !important;
+    color: black !important;
+    border: none !important;
+}
+
+.btn-primary:hover,
+.btn-warning:hover,
+.btn-danger:hover,
+.btn-success:hover,
+.btn-info:hover {
+    background-color: #ffffff !important;
+    color: black !important;
+    border: none !important;
+}
+
+
+
+.login-page, .login-box {
+    background-color: whitesmoke !important;
+}
+
+
+/* custom_admin.css */
+
+/* Calendar Styles */
+.fc th {
+    background-color: #f8a822 !important; /* Header background color */
+    color: black !important; /* Header text color */
+}
+
+.fc td {
+    background-color: white !important; /* Cell background color */
+    color: black !important; /* Cell text color */
+}
+
+.fc-day-number {
+    color: #f8a822 !important; /* Day number color */
+}
+
+.fc-today {
+    background-color: #f0f0f0 !important; /* Today's date background color */
+    color: black !important; /* Today's date text color */
+}
+
+.fc-toolbar h2 {
+    color: black !important; /* Month title color */
+}
+
+.fc-button {
+    background-color: #f8a822 !important; /* Button background color */
+    color: black !important; /* Button text color */
+}
+
+.fc-button:hover {
+    background-color: #e0e0e0 !important; /* Button hover background color */
+    color: black !important; /* Button hover text color */
+}
+

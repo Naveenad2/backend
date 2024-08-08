@@ -1,0 +1,225 @@
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    width: 100%;
+}
+
+.navbar {
+    width: 100%;
+    padding: 0;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.navbar-nav .nav-link {
+    color: #000000;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px; /* Adjust padding to give space for underline */
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #ff9800;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    display: block; /* Make underline match text width */
+    width: 0;
+    height: 2px;
+    background: #ff9800;
+    position: absolute;
+    bottom: 0; /* Position underline directly under the text */
+    left: 0;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:focus::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ff9800;
+}
+
+/* Navbar Dropdown Styles */
+.navbar .dropdown-menu {
+    background-color: #fff; /* Dropdown background color */
+    border: none; /* Remove border */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add shadow for dropdown */
+    border-radius: 0; /* Ensure no border radius */
+}
+
+.navbar .dropdown-item {
+    color: #000000; /* Dropdown item text color */
+    padding: 10px 20px; /* Padding for dropdown items */
+    position: relative;
+}
+
+.navbar .dropdown-item::after {
+    content: '';
+    display: block; /* Make underline match text width */
+    width: 0;
+    height: 2px;
+    background: #ff9800;
+    position: absolute;
+    bottom: 0; /* Position underline directly under the text */
+    left: 0;
+}
+
+.navbar .dropdown-item:hover::after,
+.navbar .dropdown-item:focus::after {
+    width: 100%;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    background-color: transparent; /* Remove background color on hover */
+    color: #ff9800; /* Change text color on hover */
+}
+
+.navbar .dropdown-toggle::after {
+    display: none; /* Remove dropdown caret */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .navbar-nav .dropdown-menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar .dropdown-item {
+        text-align: center;
+    }
+}
+
+/* Hero Section Styles */
+.hero {
+    background-size: cover;
+    height: 542px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+/* Media Section Styles */
+.media-section {
+    padding: 60px 0;
+    background-color: #000000;
+}
+
+.media-section h2 {
+    margin-bottom: 30px;
+}
+
+.media-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background-color: black; /* To show a black background if video is not loaded */
+  /*  border: 2px solid #ffc107;  border color */
+}
+
+.media-item iframe,
+.media-item video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* To ensure the video covers the entire container */
+}
+
+.media-description {
+    margin-top: 10px;
+    text-align: justify;
+    color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .media-item {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 768px) {
+    .media-featured {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .media-featured .media-item {
+        flex: 1;
+        margin-right: 20px;
+    }
+    .media-featured .media-description {
+        flex: 1;
+        margin-left: 20px;
+    }
+}
+
+
+
+.footer {
+    padding: 60px 0;
+    background-color: #fff;
+    color: #333;
+}
+
+.footer .social-icons a {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #ff9800;
+}
+
+.footer .social-icons a:hover {
+    color: #333;
+}
+
+.footer .col-lg-3, .footer .col-md-6 {
+    margin-bottom: 20px;
+}
+
+.footer h5 {
+    margin-bottom: 20px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+/* Utility Classes */
+.text-warning {
+    color: #ff9800 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Socialbee Ventures</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/terms.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container-fluid px-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <img src="{% static 'assets/images/logo.png' %}" alt="Socialbee Ventures Logo" class="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Events
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="eventsDropdown">
+                                    <a class="dropdown-item" href="{% url 'events' %}?section=ongoing">Ongoing Events</a>
+                                    <a class="dropdown-item" href="{% url 'events' %}?section=upcoming">Upcoming Events</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Resources
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                                    <a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a>
+                                    <a class="dropdown-item" href="{% url 'media' %}">Media</a>
+                                    <a class="dropdown-item" href="{% url 'newsletter' %}">Newsletters</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="terms-of-use custom-bg-black text-white py-5">
+        <div class="container">
+            <h1 class="text-uppercase text-warning">Terms of Use</h1>
+            <p>Welcome to Socialbee Ventures! By accessing or using our website, you agree to comply with and be bound by these Terms of Use. Please read them carefully.</p>
+
+            <h2 class="text-white">Acceptance of Terms</h2>
+            <p>By accessing or using Socialbee Ventures, you agree to be bound by these terms and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
+
+            <h2 class="text-white">Use of Site</h2>
+            <p>You must be at least 18 years of age to use this website. You agree to use the website only for lawful purposes. You must not use our site to engage in any activity that could harm or disrupt the website or its users.</p>
+
+            <h2 class="text-white">User Accounts</h2>
+            <p>You may be required to create an account to access certain features of our website. You are responsible for maintaining the confidentiality of your account information, including your password. You agree to notify us immediately of any unauthorized use of your account.</p>
+
+            <h2 class="text-white">Intellectual Property</h2>
+            <p>All content, including but not limited to text, graphics, logos, and software, is the property of Socialbee Ventures or its licensors and is protected by intellectual property laws. You may not reproduce, distribute, or create derivative works from any content on our website without prior written permission from us.</p>
+
+            <h2 class="text-white">User Content</h2>
+            <p>You retain ownership of any content you submit, post, or display on or through the website. By submitting content, you grant us a worldwide, non-exclusive, royalty-free license to use, copy, modify, and distribute your content.</p>
+
+            <h2 class="text-white">Termination</h2>
+            <p>We reserve the right to terminate or suspend your access to our website, without notice, for conduct that we believe violates these Terms of Use or is harmful to other users of the website, us, or third parties, or for any other reason.</p>
+
+            <h2 class="text-white">Disclaimers</h2>
+            <p>Our website is provided "as is" without warranties of any kind, either express or implied. We do not warrant that the website will be available at all times or that it will be free from errors, viruses, or other harmful components.</p>
+
+            <h2 class="text-white">Limitation of Liability</h2>
+            <p>In no event shall Socialbee Ventures or its affiliates be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with the use or inability to use our website.</p>
+
+            <h2 class="text-white">Changes to Terms</h2>
+            <p>We reserve the right to modify these Terms of Use at any time. Your continued use of the website after any such changes constitutes your acceptance of the new Terms of Use.</p>
+
+            <h2 class="text-white">Governing Law</h2>
+            <p>These terms shall be governed and construed in accordance with the laws of India, without regard to its conflict of law principles.</p>
+        </div>
+    </section>
+
+
+
+    <footer class="footer bg-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="Socialbee Ventures Logo" class="img-fluid mb-3">
+                    <p>Stay in the loop—subscribe and connect with us for the latest news and inspiring updates!</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-warning mr-2"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/socialbeeventures?igsh=N3pwYXYwOWdscmcx" class="text-warning mr-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/socialbeeventures?mibextid=ZbWKwL" class="text-warning"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Short Link</h5>
+                    <p><a href="{% url 'home' %}" class="text-dark">Home</a></p>
+                    <p><a href="{% url 'about' %}" class="text-dark">About us</a></p>
+                    <p><a href="{% url 'projects' %}" class="text-dark">Projects</a></p>
+                    <p><a href="{% url 'career' %}" class="text-dark">Career</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Help Link</h5>
+                    <p><a href="{% url 'terms_of_use' %}" class="text-dark">Terms of use</a></p>
+                    <p><a href="{% url 'privacy' %}" class="text-dark">Privacy policy</a></p>
+                    <p><a href="{% url 'help' %}" class="text-dark">Help</a></p>
+                    <p><a href="{% url 'faq' %}" class="text-dark">FAQs</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Resources</h5>
+                    <p><a href="{% url 'newsletter' %}" class="text-dark">Newsletters</a></p>
+                    <p><a href="{% url 'media' %}" class="text-dark">Media</a></p>
+                    <p><a href="{% url 'gallery' %}" class="text-dark">Gallery</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-black">Contact Us</h5>
+                    <div class="d-flex mb-2">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">SOCIALBEE VENTURES LLP</p>
+                            <p>55/1, 135A. 5th Cross road, Girinagar, Kadavanthara, Kochi</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">9249099309</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">director@socialbeeventures.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

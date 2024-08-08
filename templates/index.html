@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socialbee Ventures</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container-fluid px-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <img src="{% static 'assets/images/logo.png' %}" alt="Socialbee Ventures Logo" class="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Events
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="eventsDropdown">
+                                    <a class="dropdown-item" href="{% url 'events' %}?section=ongoing">Ongoing Events</a>
+                                    <a class="dropdown-item" href="{% url 'events' %}?section=upcoming">Upcoming Events</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Resources
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                                    <a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a>
+                                    <a class="dropdown-item" href="{% url 'media' %}">Media</a>
+                                    <a class="dropdown-item" href="{% url 'newsletter' %}">Newsletters</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="{% static 'assets/images/img 1 1.png' %}" alt="Hero Image" class="hero-img">
+        <img src="{% static 'assets/images/comb.png' %}" alt="Comb Image" class="comb-img">
+        <img src="{% static 'assets/images/Vector 1 (1).png' %}" alt="Vector Image" class="vector-img">
+        <div class="hero-text">
+            <h1>Welcome to</h1>
+            <h1>Socialbee  Ventures</h1>
+            <p>A Hive of Solutions</p>
+        </div>
+    </section>
+    
+    
+
+    <section class="about custom-bg-black text-white py-5">
+        <div class="container custom-container">
+            <h2 class="text-uppercase text-warning">About Us</h2>
+            <p>At <span class="font-weight-bold">Socialbee Ventures</span>, we consider within the power of social entrepreneurship to create fantastic exchange. We concentrate on launching and nurturing social startups that aim to address urgent societal issues. Our particular 50-50 partnership version guarantees that at the same time as we provide half of the essential funding, our passionate promoters convey within the rest, fostering a collaborative environment for innovation and effect. Join us on our task to empower alternate and make a distinction in the world.</p>
+        </div>
+    </section>
+
+    <section class="how-we-work custom-bg-black text-white py-5">
+        <div class="container custom-container">
+            <h2 class="text-uppercase text-warning">How We Work?</h2>
+            <div class="row how-we-work-content">
+                <div class="col-lg-6 col-md-12 how-we-work-image d-flex align-items-stretch">
+                    <img src="{% static 'assets/images/img 2 1.png' %}" alt="How We Work" class="img-fluid">
+                </div>
+                <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
+                    <div class="steps">
+                        <div class="step">
+                            <h4>STEP <span class="step-number">1</span></h4>
+                            <p><strong>Connect:</strong> NGOs and social startup promoters are invited to approach us with their visionary projects. We believe in open communication and collaboration from the outset.</p>
+                        </div>
+                        <div class="step">
+                            <h4>STEP <span class="step-number">2</span></h4>
+                            <p><strong>Fundraising Support:</strong> We understand that funding is the lifeblood of any social initiative. At Socialbee Ventures, we assist our partners in raising the necessary funds to bring their ideas to life.</p>
+                        </div>
+                        <div class="step">
+                            <h4>STEP <span class="step-number">3</span></h4>
+                            <p><strong>Legal Guidance:</strong> Navigating the legal landscape can be daunting. Our team provides expert guidance to ensure all legal documents are in order, allowing our partners to focus on their mission.</p>
+                        </div>
+                        <div class="step">
+                            <h4>STEP <span class="step-number">4</span></h4>
+                            <p><strong>Value Addition:</strong> Beyond financial support, we offer a range of value-adding services. From strategic planning to operational efficiency, we help our partners optimize their impact.</p>
+                        </div>
+                        <div class="step">
+                            <h4>STEP <span class="step-number">5</span></h4>
+                            <p><strong>Marketing and Outreach:</strong> Visibility is key to success. We provide marketing opportunities that amplify our partners' reach, ensuring their message resonates with the right audience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section class="mission-vision custom-bg-black text-white py-5">
+        <div class="container text-center">
+            <h3 class="text-uppercase text-warning mt-5">Our Vision</h3>
+            <p>Our vision is to create a vibrant, collaborative community where innovation and shared knowledge drive sustainable growth and lasting success.</p>
+            <h3 class="text-uppercase text-warning">Our Mission</h3>
+            <p>Our mission at Socialbee Ventures is to empower entrepreneurs and small business owners to thrive in today's digital landscape. We are dedicated to providing the resources, mentorship, and support necessary to help our members turn their business dreams into reality.</p>
+        </div>
+    </section>
+
+    <section class="core-services custom-bg-black text-white py-5">
+        <div class="container">
+            <div class="core-services-header text-center">
+                <h2 class="text-uppercase text-warning">Our Core Services</h2>
+            </div>
+
+            <div class="core-services-item border-yellow mb-4 p-3">
+                <div class="core-services-content d-flex flex-column flex-md-row align-items-stretch">
+                    <img src="{% static 'assets/images/os 1.jpg' %}" alt="Social Entrepreneurship" class="img-fluid mb-3 mb-md-0">
+                    <div class="text p-3">
+                        <h3 class="text-warning">SOCIAL ENTREPRENEURSHIP</h3>
+                        <p>At Socialbee Ventures, we champion the power of social entrepreneurship to drive meaningful change. We believe that businesses can be a force for good, addressing pressing societal issues while achieving sustainable growth. Our team supports social startups with the tools, knowledge, and resources they need to create scalable solutions that make a positive impact. From ideation to implementation, we guide entrepreneurs through every step of their journey, ensuring their ventures are both impactful and economically viable.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="core-services-item border-yellow mb-4 p-3">
+                <div class="core-services-content d-flex flex-column flex-md-row align-items-stretch">
+                    <div class="text p-3">
+                        <h3 class="text-warning">NETWORKING EVENTS</h3>
+                        <p>Connecting with like-minded individuals and organizations is crucial for growth and innovation. Socialbee Ventures organizes a variety of networking events that bring together entrepreneurs, investors, NGOs, and industry experts. These events provide a platform for sharing ideas, forging partnerships, and discovering new opportunities. Whether it’s a workshop, seminar, or a large-scale conference, our events are designed to foster collaboration and inspire the exchange of innovative ideas.</p>
+                    </div>
+                    <img src="{% static 'assets/images/os 2.jpg' %}" alt="Networking Events" class="img-fluid mb-3 mb-md-0">
+                </div>
+            </div>
+
+            <div class="core-services-item border-yellow mb-4 p-3">
+                <div class="core-services-content d-flex flex-column flex-md-row align-items-stretch">
+                    <img src="{% static 'assets/images/os 3.jpg' %}" alt="Digital Marketing" class="img-fluid mb-3 mb-md-0">
+                    <div class="text p-3">
+                        <h3 class="text-warning">DIGITAL MARKETING</h3>
+                        <p>In today's digital age, a robust online presence is essential for any business. Our digital marketing services help our partners enhance their visibility and reach their target audiences effectively. We offer comprehensive digital marketing strategies, including social media management, content creation, search engine optimization (SEO), and online advertising. By leveraging the latest digital marketing trends, we ensure that our partners can communicate their mission and impact to a broader audience, driving engagement and support.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="core-services-item border-yellow mb-4 p-3">
+                <div class="core-services-content d-flex flex-column flex-md-row align-items-stretch">
+                    <div class="text p-3">
+                        <h3 class="text-warning">BUSINESS CONSULTING</h3>
+                        <p>Navigating the complexities of running a social enterprise can be challenging. Our business consulting services provide expert guidance and practical solutions tailored to the unique needs of social startups. From business model development to financial planning and operational strategy, we help social startups to optimize their operations and achieve sustainable growth. Our consultants bring a wealth of experience and industry insights, offering strategies that drive sustainable growth and long-term success.</p>
+                    </div>
+                    <img src="{% static 'assets/images/os 4.jpg' %}" alt="Business Consulting" class="img-fluid mb-3 mb-md-0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats custom-bg-black text-white py-5">
+        <div class="container">
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="row text-center justify-content-center position-relative">
+                <div class="col-12 col-md-3 stats-item mb-4 mb-md-0">
+                    <div class="stats-box">
+                        <h3 id="clients-count">{{ stats.clients_count }}</h3>
+                        <p>Clients</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 stats-item mb-4 mb-md-0">
+                    <div class="stats-box">
+                        <h3 id="projects-count">{{ stats.projects_count }}</h3>
+                        <p>No. of Projects</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 stats-item mb-4 mb-md-0">
+                    <div class="stats-box">
+                        <h3 id="upcoming-projects-count">{{ stats.upcoming_projects_count }}</h3>
+                        <p>Upcoming Projects</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 stats-item mb-4 mb-md-0">
+                    <div class="stats-box">
+                        <h3 id="events-count">{{ stats.events_count }}</h3>
+                        <p>Events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<script src="{% static 'js/stati.js' %}"></script>
+
+<section class="contact custom-bg-black text-white py-5">
+    <div class="container text-center">
+        <h2 class="text-uppercase text-warning mb-4">Contact Us</h2>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="contact-info mb-4">
+                    <div class="contact-box mb-3 d-flex align-items-center">
+                        <div class="icon text-warning mr-3">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="mb-0">SOCIALBEE VENTURES LLP</p>
+                            <p>55/1, 135A. 5th Cross road, Girinagar, Kadavanthara, Kochi, Kerala - 682020</p>
+                        </div>
+                    </div>
+                    <div class="contact-box mb-3 d-flex align-items-center">
+                        <a href="tel:+919249099309" class="d-flex align-items-center text-dark">
+                            <div class="icon text-warning mr-3">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="mb-0">9249099309</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contact-box d-flex align-items-center">
+                        <a href="mailto:director@socialbeeventures.com" class="d-flex align-items-center text-dark">
+                            <div class="icon text-warning mr-3">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="mb-0">director@socialbeeventures.com</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <form action="{% url 'contact' %}" method="post" onsubmit="return validateForm()">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-block">Send Message</button>
+                </form>
+                <div id="successMessage" class="mt-3 text-success" style="display: none;">
+                    Your message has been sent successfully!
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d37385.01169882183!2d76.29246124703855!3d9.965930577928889!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0873007d267e4d%3A0xa2b5f5d785b8c667!2sSOCIALBEE%20VENTURES%20LLP!5e0!3m2!1sen!2sin!4v1720507888221!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function validateForm() {
+        var email = document.getElementById("email").value;
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+        document.getElementById("successMessage").style.display = "block";
+        return true;
+    }
+</script>
+
+
+    <footer class="footer bg-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="Socialbee Ventures Logo" class="img-fluid mb-3">
+                    <p>Stay in the loop—subscribe and connect with us for the latest news and inspiring updates!</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-warning mr-2"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/socialbeeventures?igsh=N3pwYXYwOWdscmcx" class="text-warning mr-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/socialbeeventures?mibextid=ZbWKwL" class="text-warning"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Short Link</h5>
+                    <p><a href="{% url 'home' %}" class="text-dark">Home</a></p>
+                    <p><a href="{% url 'about' %}" class="text-dark">About us</a></p>
+                    <p><a href="{% url 'projects' %}" class="text-dark">Projects</a></p>
+                    <p><a href="{% url 'career' %}" class="text-dark">Career</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Help Link</h5>
+                    <p><a href="{% url 'terms_of_use' %}" class="text-dark">Terms of use</a></p>
+                    <p><a href="{% url 'privacy' %}" class="text-dark">Privacy policy</a></p>
+                    <p><a href="{% url 'help' %}" class="text-dark">Helps</a></p>
+                    <p><a href="{% url 'faq' %}" class="text-dark">FAQs</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Resources</h5>
+                    <p><a href="{% url 'newsletter' %}" class="text-dark">Newsletters</a></p>
+                    <p><a href="{% url 'media' %}" class="text-dark">Media</a></p>
+                    <p><a href="{% url 'gallery' %}" class="text-dark">Gallery</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-black">Contact Us</h5>
+                    <div class="d-flex mb-2">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">SOCIALBEE VENTURES LLP</p>
+                            <p>55/1, 135A. 5th Cross road, Girinagar, Kadavanthara, Kochi</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">9249099309</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">director@socialbeeventures.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

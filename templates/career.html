@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Socialbee Ventures</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/careers.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container-fluid px-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <img src="{% static 'assets/images/logo.png' %}" alt="Socialbee Ventures Logo" class="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Events
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="eventsDropdown">
+                                    <a class="dropdown-item" href="{% url 'events' %}?section=ongoing">Ongoing Events</a>
+                                    <a class="dropdown-item" href="{% url 'events' %}?section=upcoming">Upcoming Events</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Resources
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                                    <a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a>
+                                    <a class="dropdown-item" href="{% url 'media' %}">Media</a>
+                                    <a class="dropdown-item" href="{% url 'newsletter' %}">Newsletters</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="careers py-5">
+        <div class="container">
+            {% if job_openings %}
+            <h1 class="text-uppercase text-warning">Join Our Team</h1>
+            <p class="lead">We are always looking for passionate and talented individuals to join our team at Socialbee Ventures.</p>
+
+            <section class="career-section custom-bg-black text-white py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h3 class="text-warning">Current Openings</h3>
+                            <ul class="list-unstyled">
+                                {% for job in job_openings %}
+                                <li class="mb-3">
+                                    <h5 class="text-white">{{ job.title }}</h5>
+                                    <p>{{ job.description }}</p>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h3 class="text-warning">Apply Now</h3>
+                            <form id="application-form" action="{% url 'career' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Position</label>
+                                    <select class="form-control" id="position" name="position" required>
+                                        {% for job in job_openings %}
+                                        <option value="{{ job.id }}">{{ job.title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="resume">Resume</label>
+                                    <input type="file" class="form-control" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                                    <small class="form-text text-muted">Accepted formats: .pdf, .doc, .docx. Max size: 2MB.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-warning btn-block">Apply Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% else %}
+            <div class="text-center">
+                <h1 class="text-uppercase text-warning">Currently No Vacancy</h1>
+                <p class="lead">Thank you for your interest in Socialbee Ventures. We currently have no open positions, but please check back later or follow us on social media for updates.</p>
+                <div class="social-icons mt-4">
+                    <a href="#" class="text-warning mr-2"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/socialbeeventures?igsh=N3pwYXYwOWdscmcx" class="text-warning mr-2"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/socialbeeventures?mibextid=ZbWKwL" class="text-warning"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <footer class="footer bg-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="Socialbee Ventures Logo" class="img-fluid mb-3">
+                    <p>Stay in the loop—subscribe and connect with us for the latest news and inspiring updates!</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-warning mr-2"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/socialbeeventures?igsh=N3pwYXYwOWdscmcx" class="text-warning mr-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/socialbeeventures?mibextid=ZbWKwL" class="text-warning"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Short Link</h5>
+                    <p><a href="{% url 'home' %}" class="text-dark">Home</a></p>
+                    <p><a href="{% url 'about' %}" class="text-dark">About us</a></p>
+                    <p><a href="{% url 'projects' %}" class="text-dark">Projects</a></p>
+                    <p><a href="{% url 'career' %}" class="text-dark">Career</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Help Link</h5>
+                    <p><a href="{% url 'terms_of_use' %}" class="text-dark">Terms of use</a></p>
+                    <p><a href="{% url 'privacy' %}" class="text-dark">Privacy policy</a></p>
+                    <p><a href="{% url 'help' %}" class="text-dark">Helps</a></p>
+                    <p><a href="{% url 'faq' %}" class="text-dark">FAQs</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-black">Resources</h5>
+                    <p><a href="{% url 'newsletter' %}" class="text-dark">Newsletters</a></p>
+                    <p><a href="{% url 'media' %}" class="text-dark">Media</a></p>
+                    <p><a href="{% url 'gallery' %}" class="text-dark">Gallery</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-black">Contact Us</h5>
+                    <div class="d-flex mb-2">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">SOCIALBEE VENTURES LLP</p>
+                            <p>55/1, 135A. 5th Cross road, Girinagar, Kadavanthara, Kochi</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">9249099309</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="icon text-warning mr-2">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text">
+                            <p class="mb-0">director@socialbeeventures.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('application-form')?.addEventListener('submit', function(event) {
+            var resumeInput = document.getElementById('resume');
+            var file = resumeInput.files[0];
+            if (file) {
+                var sizeInMB = file.size / (1024 * 1024);
+                var allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                if (sizeInMB > 2) {
+                    alert('File size should not exceed 2MB.');
+                    event.preventDefault();
+                }
+                if (!allowedTypes.includes(file.type)) {
+                    alert('Invalid file format. Only PDF, DOC, and DOCX are allowed.');
+                    event.preventDefault();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
