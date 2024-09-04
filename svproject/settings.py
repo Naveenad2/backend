@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-tq7i&9)-_f^_u+t$u03vkicfl(c%494&jrg90n^2s!h7m4ai1@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-13-60-172-111.eu-north-1.compute.amazonaws.com','127.0.0.1']
+ALLOWED_HOSTS = ['spencer-royalty-ok-universities.trycloudflare.com','ec2-13-60-172-111.eu-north-1.compute.amazonaws.com','127.0.0.1']
 
 
 # Application definition
@@ -211,6 +211,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+
+CSRF_TRUSTED_ORIGINS=['https://spencer-royalty-ok-universities.trycloudflare.com']
 
 
 # Default primary key field type
